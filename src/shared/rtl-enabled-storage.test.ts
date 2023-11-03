@@ -1,7 +1,7 @@
 import { getRTLEnabledValue, setRTLEnabledValue } from "./rtl-enabled-storage";
 import { getValue, setValue } from "./chrome";
 
-const key = "chat-gpt-rtl-enabled";
+const key = "claude-rtl-enabled";
 
 jest.mock("./chrome/storage");
 

@@ -1,6 +1,6 @@
 import { getValue, setValue } from "./chrome";
 
-const key = "chat-gpt-rtl-enabled";
+const key = "claude-rtl-enabled";
 
 export async function getRTLEnabledValue(): Promise<boolean> {
   const value = await getValue<string>({ key });

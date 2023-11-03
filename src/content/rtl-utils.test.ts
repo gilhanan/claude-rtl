@@ -1,8 +1,8 @@
 import { applyRTLToMutations, toggleRTLGlobal } from "./rtl-utils";
 import * as rtlEnabledStorage from "../shared/rtl-enabled-storage";
 
-const RTL_CLASS = "chat-gpt-rtl";
-const RTL_ENABLED_CLASS = "chat-gpt-rtl-enabled";
+const RTL_CLASS = "claude-rtl";
+const RTL_ENABLED_CLASS = "claude-rtl-enabled";
 const RTL_CONTENT = "مرحبا بك في";
 const LTR_CONTENT = "Hello, World";
 

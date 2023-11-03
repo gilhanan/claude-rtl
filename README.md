@@ -1,12 +1,12 @@
-[![CI GitHub action](https://github.com/gilhanan/chat-gpt-rtl/workflows/CI/badge.svg)](https://github.com/gilhanan/chat-gpt-rtl/actions/workflows/ci.yml)
-[![CodeQL GitHub action](https://github.com/gilhanan/chat-gpt-rtl/workflows/CodeQL/badge.svg)](https://github.com/gilhanan/chat-gpt-rtl/actions/workflows/codeql.yml)
-[![Extension Version](https://img.shields.io/badge/dynamic/json?label=Version&query=$.version&url=https://raw.githubusercontent.com/gilhanan/chat-gpt-rtl/main/public/manifest.json)](https://ghchatgptrtl.blob.core.windows.net/main/extension.zip)
-[![Jest coverage](https://img.shields.io/badge/dynamic/json?label=Coverage&query=$.total.lines.pct&suffix=%&url=https://ghchatgptrtl.blob.core.windows.net/main/coverage/coverage-summary.json&color=green)](https://ghchatgptrtl.blob.core.windows.net/main/coverage/lcov-report/index.html)
-[![Playwright report](https://img.shields.io/badge/E2E%20tests-passing-green)](https://ghchatgptrtl.blob.core.windows.net/main/playwright-report/index.html)
+[![CI GitHub action](https://github.com/gilhanan/claude-rtl/workflows/CI/badge.svg)](https://github.com/gilhanan/claude-rtl/actions/workflows/ci.yml)
+[![CodeQL GitHub action](https://github.com/gilhanan/claude-rtl/workflows/CodeQL/badge.svg)](https://github.com/gilhanan/claude-rtl/actions/workflows/codeql.yml)
+[![Extension Version](https://img.shields.io/badge/dynamic/json?label=Version&query=$.version&url=https://raw.githubusercontent.com/gilhanan/claude-rtl/main/public/manifest.json)](https://ghclaudertl.blob.core.windows.net/main/extension.zip)
+[![Jest coverage](https://img.shields.io/badge/dynamic/json?label=Coverage&query=$.total.lines.pct&suffix=%&url=https://ghclaudertl.blob.core.windows.net/main/coverage/coverage-summary.json&color=green)](https://ghclaudertl.blob.core.windows.net/main/coverage/lcov-report/index.html)
+[![Playwright report](https://img.shields.io/badge/E2E%20tests-passing-green)](https://ghclaudertl.blob.core.windows.net/main/playwright-report/index.html)
 
-# ChatGPT RTL Chrome Extension
+# Claude RTL Chrome Extension
 
-This is a Chrome extension designed to enhance the usability of ChatGPT for users who communicate using right-to-left (RTL) scripts. The extension automatically detects RTL characters and adjusts the direction of the DOM elements accordingly, providing a seamless and intuitive interface for RTL languages. Ideal for users who interact with languages like Arabic, Hebrew, Persian, Urdu, and others that require RTL orientation.
+This is a Chrome extension designed to enhance the usability of Claude for users who communicate using right-to-left (RTL) scripts. The extension automatically detects RTL characters and adjusts the direction of the DOM elements accordingly, providing a seamless and intuitive interface for RTL languages. Ideal for users who interact with languages like Arabic, Hebrew, Persian, Urdu, and others that require RTL orientation.
 
 <img src="./documentation/tile/Tile.png" alt="drawing" width="180"/>
 
@@ -27,15 +27,15 @@ This is a Chrome extension designed to enhance the usability of ChatGPT for user
 
 ## How to install
 
-You can install it from [Chrome Web Store](https://chrome.google.com/webstore/detail/chatgpt-rtl/nabcbpmmefiigmjpopfciegmlgihkofd) or [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/chatgpt-rtl/nanhglhndgcjhjcbfimjfopabdakdpmb)
+You can install it from [Chrome Web Store](https://chrome.google.com/webstore/detail/claude-rtl/nabcbpmmefiigmjpopfciegmlgihkofd) or [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/claude-rtl/nanhglhndgcjhjcbfimjfopabdakdpmb)
 
 ## Getting Started
 
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/gilhanan/chat-gpt-rtl.git
-cd chatgpt-rtl
+git clone https://github.com/gilhanan/claude-rtl.git
+cd claude-rtl
 ```
 
 Install the necessary dependencies:

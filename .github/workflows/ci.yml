@@ -14,8 +14,8 @@ permissions:
   security-events: write
 
 env:
-  AZURE_RESOURCE_GROUP: "gh-chat-gpt-rtl"
-  AZURE_STORAGE_ACCOUNT: "ghchatgptrtl"
+  AZURE_RESOURCE_GROUP: "gh-claude-rtl"
+  AZURE_STORAGE_ACCOUNT: "ghclaudertl"
   LOCATION: "West Europe"
 
 jobs:

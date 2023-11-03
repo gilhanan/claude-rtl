@@ -1,15 +1,15 @@
 {
   "extensionDescription": {
-    "message": "עימוד ויישור של טקסט בעברית בצורה אוטומטית ב-ChatGPT."
+    "message": "עימוד ויישור של טקסט בעברית בצורה אוטומטית ב-Claude."
   },
   "headerTitle": {
-    "message": "ChatGPT מימין-לשמאל"
+    "message": "Claude מימין-לשמאל"
   },
   "headerDescription": {
     "message": "עימוד ויישור של טקסט בעברית בצורה אוטומטית ב-"
   },
-  "chatGPTLinkAriaLabel": {
-    "message": "פתח את ChatGPT בכרטיסייה חדשה"
+  "claudeLinkAriaLabel": {
+    "message": "פתח את Claude בכרטיסייה חדשה"
   },
   "settings": {
     "message": "הגדרות"

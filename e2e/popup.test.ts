@@ -39,17 +39,17 @@ test.describe("Popup", () => {
     });
   });
 
-  test.describe("ChatGPT link", () => {
+  test.describe("Claude link", () => {
     test("Opens in a new tab", async ({ context, page }) => {
       const pagePromise = context.waitForEvent("page");
 
-      const link = page.getByRole("link", { name: "ChatGPT" });
+      const link = page.getByRole("link", { name: "Claude" });
 
       await link.click();
 
       const newPage = await pagePromise;
 
-      expect(newPage.url()).toContain("https://chat.openai.com/");
+      expect(newPage.url()).toContain("https://claude.ai/");
     });
   });
 
@@ -60,11 +60,11 @@ test.describe("Popup", () => {
 
     test("Renders successfully", async ({ page }) => {
       await expect(
-        page.getByRole("heading", { name: "ChatGPT RTL" }),
+        page.getByRole("heading", { name: "Claude RTL" }),
       ).toBeVisible();
       await expect(
         page.getByText(
-          "Automatically detects and align right-to-left texts in ChatGPT.",
+          "Automatically detects and align right-to-left texts in Claude.",
         ),
       ).toBeVisible();
       await expect(
@@ -90,12 +90,10 @@ test.describe("Popup", () => {
 
     test("Renders successfully", async ({ page }) => {
       await expect(
-        page.getByRole("heading", { name: "ChatGPT من اليمين الى اليسار" }),
+        page.getByRole("heading", { name: "Claude من اليمين الى اليسار" }),
       ).toBeVisible();
       await expect(
-        page.getByText(
-          "ترقيم الصفحات ومحاذاة النص العربي تلقائيًا في ChatGPT.",
-        ),
+        page.getByText("ترقيم الصفحات ومحاذاة النص العربي تلقائيًا في Claude."),
       ).toBeVisible();
       await expect(
         page.getByRole("heading", { name: "إعدادات" }),
@@ -122,10 +120,10 @@ test.describe("Popup", () => {
 
     test("Renders successfully", async ({ page }) => {
       await expect(
-        page.getByRole("heading", { name: "ChatGPT מימין-לשמאל" }),
+        page.getByRole("heading", { name: "Claude מימין-לשמאל" }),
       ).toBeVisible();
       await expect(
-        page.getByText("עימוד ויישור של טקסט בעברית בצורה אוטומטית ב-ChatGPT."),
+        page.getByText("עימוד ויישור של טקסט בעברית בצורה אוטומטית ב-Claude."),
       ).toBeVisible();
       await expect(page.getByRole("heading", { name: "הגדרות" })).toBeVisible();
       await expect(page.getByText("הפעל יישור אוטמוטי של עברית")).toBeVisible();

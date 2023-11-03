@@ -3,7 +3,7 @@ import { containsRTL } from "../shared/utils";
 import {
   isHTMLDivElement,
   isHTMLElement,
-  isHTMLTextAreaElement,
+  isHTMLParagraphElement,
   queryHTMLElements,
   toggleClass,
 } from "../shared/dom";
@@ -19,7 +19,7 @@ function toggleRTLElement({
   element: HTMLElement;
   enabled: boolean;
 }): void {
-  toggleClass({ element, className: "chat-gpt-rtl", enabled });
+  toggleClass({ element, className: "claude-rtl", enabled });
 }
 
 function enableRTLElement(element: HTMLElement): void {
@@ -29,37 +29,43 @@ function enableRTLElement(element: HTMLElement): void {
 function applyRTLToChildrens(element: HTMLElement): void {
   queryHTMLElements({
     element,
-    selector: "p, ol, ul, div",
+    selector: "p, ol, ul, dl, button > div",
   })
-    .filter(
-      (element) => !isHTMLDivElement(element) || element.children.length === 0,
-    )
     .filter(({ textContent }) => isRTLApplicable(textContent))
     .forEach(enableRTLElement);
+}
+
+function getInputTextParent(element: HTMLElement): HTMLElement | null {
+  return element.closest('[contenteditable="true"]');
 }
 
 export function applyRTLToMutations(mutations: MutationRecord[]): void {
   mutations.forEach(({ type, target }) => {
     const { nodeType, parentElement } = target;
 
-    if (type === "childList") {
-      if (isHTMLTextAreaElement(target)) {
-        toggleRTLElement({
-          element: target,
-          enabled: isRTLApplicable(target.value),
-        });
-      } else if (isHTMLElement(target)) {
-        applyRTLToChildrens(target);
-      }
-    }
+    const grandparentElement = parentElement?.parentElement;
 
     if (
       type === "characterData" &&
       nodeType === Node.TEXT_NODE &&
-      parentElement !== null &&
-      isRTLApplicable(parentElement.textContent)
+      isHTMLParagraphElement(parentElement) &&
+      grandparentElement?.getAttribute("contenteditable") === "true"
     ) {
-      enableRTLElement(parentElement);
+      if (isHTMLDivElement(grandparentElement)) {
+        toggleRTLElement({
+          element: grandparentElement,
+          enabled: isRTLApplicable(target.textContent),
+        });
+      }
+    }
+
+    if (
+      type === "childList" &&
+      isHTMLElement(target) &&
+      !getInputTextParent(target) &&
+      isRTLApplicable(target.textContent)
+    ) {
+      applyRTLToChildrens(target);
     }
   });
 }
@@ -67,7 +73,7 @@ export function applyRTLToMutations(mutations: MutationRecord[]): void {
 export function toggleRTLGlobal({ enabled }: { enabled: boolean }): void {
   toggleClass({
     element: document.body,
-    className: "chat-gpt-rtl-enabled",
+    className: "claude-rtl-enabled",
     enabled,
   });
   void setRTLEnabledValue(enabled);

@@ -1,15 +1,15 @@
 {
   "extensionDescription": {
-    "message": "ترقيم الصفحات ومحاذاة النص العربي تلقائيًا في ChatGPT."
+    "message": "ترقيم الصفحات ومحاذاة النص العربي تلقائيًا في Claude."
   },
   "headerTitle": {
-    "message": "ChatGPT من اليمين الى اليسار"
+    "message": "Claude من اليمين الى اليسار"
   },
   "headerDescription": {
     "message": "ترقيم الصفحات ومحاذاة النص العربي تلقائيًا في "
   },
-  "chatGPTLinkAriaLabel": {
-    "message": "افتح ChatGPT في علامة تبويب جديدة"
+  "claudeLinkAriaLabel": {
+    "message": "افتح Claude في علامة تبويب جديدة"
   },
   "settings": {
     "message": "إعدادات"

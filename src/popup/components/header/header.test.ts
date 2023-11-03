@@ -20,12 +20,12 @@ describe("createHeader", () => {
 
     it("should render description", () => {
       const description = header.getElementsByClassName("text-sm")[0];
-      expect(description.textContent).toBe("headerDescriptionChatGPT.");
+      expect(description.textContent).toBe("headerDescriptionClaude.");
     });
 
     it("should render link", () => {
       const link = header.querySelector("a");
-      expect(link?.textContent).toBe("ChatGPT");
+      expect(link?.textContent).toBe("Claude");
     });
   });
 });

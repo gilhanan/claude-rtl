@@ -18,9 +18,9 @@ export function createHeaderLandmark(): HTMLElement {
 
   const descriptionLink = createAnchor({
     className: "underline text-blue-600 hover:text-blue-800",
-    href: "https://chat.openai.com/",
-    textContent: "ChatGPT",
-    ariaLabel: chrome.i18n.getMessage("chatGPTLinkAriaLabel"),
+    href: "https://claude.ai/",
+    textContent: "Claude",
+    ariaLabel: chrome.i18n.getMessage("claudeLinkAriaLabel"),
   });
 
   description.append(

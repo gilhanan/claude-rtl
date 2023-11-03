@@ -2,7 +2,7 @@ export function isHTMLElement(node: Node): node is HTMLElement {
   return node instanceof HTMLElement;
 }
 
-export function isHTMLDivElement(node: Node): node is HTMLDivElement {
+export function isHTMLDivElement(node?: Node | null): node is HTMLDivElement {
   return node instanceof HTMLDivElement;
 }
 
@@ -12,6 +12,12 @@ export function isHTMLInputElement(node: Node): node is HTMLInputElement {
 
 export function isHTMLTextAreaElement(node: Node): node is HTMLTextAreaElement {
   return node instanceof HTMLTextAreaElement;
+}
+
+export function isHTMLParagraphElement(
+  node: Node | null,
+): node is HTMLParagraphElement {
+  return node instanceof HTMLParagraphElement;
 }
 
 export function toggleClass({

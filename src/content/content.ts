@@ -2,32 +2,16 @@ import "./content.scss";
 import { isToggleRTLGlobalMessage } from "../shared/toggle-rtl-message";
 import { getRTLEnabledValue } from "../shared/rtl-enabled-storage";
 import { toggleRTLGlobal, applyRTLToMutations } from "./rtl-utils";
-import { observeChanges, observeChangesOnce } from "./observers";
+import { observeChanges } from "./observers";
 
 async function initRTLEnabled(): Promise<void> {
   const enabled = await getRTLEnabledValue();
   toggleRTLGlobal({ enabled });
 }
 
-const mainObserverCallback: MutationCallback = (mutations) => {
+const observeChangesCallback: MutationCallback = (mutations) => {
   applyRTLToMutations(mutations);
 };
-
-function observeMainChanges(): void {
-  const main = document.querySelector("main");
-
-  if (main === null) return;
-
-  observeChangesOnce({
-    target: main,
-    options: {
-      childList: true,
-      subtree: true,
-      characterData: true,
-    },
-    callback: mainObserverCallback,
-  });
-}
 
 chrome.runtime.onMessage.addListener((message) => {
   if (isToggleRTLGlobalMessage(message)) {
@@ -43,6 +27,7 @@ observeChanges({
   options: {
     childList: true,
     subtree: true,
+    characterData: true,
   },
-  callback: observeMainChanges,
+  callback: observeChangesCallback,
 });

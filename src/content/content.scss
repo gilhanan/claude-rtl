@@ -1,16 +1,12 @@
-.chat-gpt-rtl-enabled {
-  .chat-gpt-rtl {
+.claude-rtl-enabled {
+  .claude-rtl {
     direction: rtl !important;
+  }
 
-    > li:before {
-      padding-right: 0 !important;
-      padding-left: 0.5rem !important;
-      --tw-translate-x: 100% !important;
-    }
-
-    .math {
-      display: inline-block !important;
-      direction: ltr !important;
-    }
+  ul.claude-rtl,
+  ol.claude-rtl,
+  dl.claude-rtl {
+    padding-left: 0 !important;
+    padding-right: 2rem !important;
   }
 }

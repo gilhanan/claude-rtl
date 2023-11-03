@@ -1,15 +1,15 @@
 {
   "extensionDescription": {
-    "message": "ChatGPT auto right-to-left alignments. Supports Arabic, Persian, Hebrew, and more."
+    "message": "Claude auto right-to-left alignments. Supports Arabic, Persian, Hebrew, and more."
   },
   "headerTitle": {
-    "message": "ChatGPT RTL"
+    "message": "Claude RTL"
   },
   "headerDescription": {
     "message": "Automatically detects and align right-to-left texts in "
   },
-  "chatGPTLinkAriaLabel": {
-    "message": "Open ChatGPT in a new tab"
+  "claudeLinkAriaLabel": {
+    "message": "Open Claude in a new tab"
   },
   "settings": {
     "message": "Settings"

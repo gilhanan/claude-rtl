@@ -1,9 +1,9 @@
 {
-  "name": "ChatGPT RTL",
+  "name": "Claude RTL",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "manifest_version": 3,
-  "version": "1.7",
+  "version": "1.0",
   "permissions": ["storage"],
   "action": {
     "default_popup": "popup/popup.html",
@@ -15,7 +15,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://chat.openai.com/*"],
+      "matches": ["https://claude.ai/*"],
       "css": ["content/content.css"],
       "js": ["content/content.js"],
       "run_at": "document_end"
